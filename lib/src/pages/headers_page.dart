@@ -13,7 +13,7 @@ class HeaderPage extends StatelessWidget {
       //   title: Text('Test'),
       // ),
       body: 
-      HeaderWaveFooter(),
+      HeaderWaveGradientPainter(),
     );
   }
 }

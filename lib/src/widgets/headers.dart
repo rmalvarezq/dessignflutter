@@ -209,25 +209,47 @@ class _HeaderWave extends CustomPainter {
   }
 }
 
-class HeaderWaveFooter extends StatelessWidget {
+class HeaderWaveGradientPainter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
       width: double.infinity,
       // color: Color(0XffEF2929),
-      child: CustomPaint(painter: _HeaderWaveFooter()),
+      child: CustomPaint(painter: _HeaderWaveGradientPainter()),
     );
   }
 }
 
-class _HeaderWaveFooter extends CustomPainter {
+class _HeaderWaveGradientPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final lapiz = Paint();
+    
+    final Rect rect = new Rect.fromCircle(
+      center: Offset(0.0, 55.0),
+      radius: 180,
+
+    );
+    
+    final gradiente = new LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors : <Color>[
+        Color(0xff6D05E8),
+        Color(0xffC012FF),
+        Color(0xff6D05FA)
+      ],
+      stops: [
+        0.2,
+        0.5,
+        1.0
+      ]
+    );
+
+    final lapiz = Paint()..shader = gradiente.createShader(rect);
 
     // propiedades
-    lapiz.color = Color(0XffEF2929);
+    // lapiz.color = Color(0XffEF2929);
     lapiz.style = PaintingStyle.fill;
     lapiz.strokeWidth = 10;
 
