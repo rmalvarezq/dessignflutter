@@ -1,4 +1,4 @@
-import 'package:dessignflutter/src/pages/slidesshow_pages.dart';
+import 'package:dessignflutter/src/pages/slideshow_page.dart';
 import 'package:flutter/material.dart';
 
 // import 'package:dessignflutter/src/pages/headers_page.dart';
